@@ -11,16 +11,16 @@ public class Board {
 
         board = new Square[rows][columns];
 
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows ; j++) {
-                board[i][j] = new Square( j,i);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns ; j++) {
+                board[i][j] = new Square( i,j);
             }
         }
 
     }
 
     public Square getSquare( int row, int column){
-       return( board[row][column]);
+       return( board[ row][ column ]);
     }
 
     public int getCryptoCount() {
@@ -62,8 +62,8 @@ public class Board {
 
             for (int j = 0; j < columns ; j++) {
                   Square tmpSquare = board[i][j];
-                if(  tmpSquare.isOccupied() && tmpSquare.getCrypto().isDead() ) {
-//                if(tmpSquare.isOccupied() && tmpSquare.getCrypto().isDamaged( tmpSquare ) ) {
+//                if(  tmpSquare.isOccupied() && tmpSquare.getCrypto().isDead() ) {
+                if(tmpSquare.isOccupied() && tmpSquare.getCrypto().isDamaged( tmpSquare ) ) {
                     System.out.print(" | " + tmpSquare.getCrypto().getNumber());
                 }else{
                     System.out.print(" | ." );

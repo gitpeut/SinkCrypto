@@ -55,6 +55,7 @@ public class Game {
                 if (tmpCrypto.isDamaged(square)){
                     System.out.println("Crypto #" + tmpCrypto.getNumber() + " - " + tmpCrypto.getName() + " already damaged here");
                 }else {
+                    System.out.println("Hit! row " +  (char)(square.getRow() + 'A') + ", column " + square.getColumn()  );
                     if (tmpCrypto.hit(square)) {
                         System.out.println("Crypto #" + tmpCrypto.getNumber() + " - " + tmpCrypto.getName() + " is dead");
                         numberOfCryptos--;
@@ -64,9 +65,7 @@ public class Game {
                 }
             }
         }else{
-            System.out.println("Missed, nothing at " );
-            square.show();
-
+            System.out.println("Missed, nothing at " +  (char)(square.getRow() + 'A') + ", column " + square.getColumn() );
         }
     }
 

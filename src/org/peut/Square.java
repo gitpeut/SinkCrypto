@@ -51,10 +51,10 @@ public class Square {
     }
 
     public void setPosition(String rowcolumn) {
-        char    row = rowcolumn.charAt(0);
-        int     column = Integer.parseInt( rowcolumn.substring(1) );
+        char    sRow    = rowcolumn.charAt(0);
+        int     sColumn = Integer.parseInt( rowcolumn.substring(1) );
 
-        setPosition(row, column);
+        setPosition( sRow, sColumn );
     }
 
     public boolean testPosition(String rowcolumn) {
@@ -107,7 +107,7 @@ public class Square {
     public void show(){
 
 
-       System.out.print("row : " + (char)(row + 'A') + " (" + row  + "), column : " + column  );
+       System.out.print("row : " + (char)(row + 'A') + " (" + this.row  + "), column : " + this.column  );
        System.out.print(occupied?" - Occupied by ":" - Free");
         if(crypto == null){
             System.out.println();
@@ -117,18 +117,7 @@ public class Square {
 
     }
 
-    public void playerShow(){
 
-
-        System.out.print("row : " + (char)(row + 'A') + " (" + row  + "), column : " + column  );
-        System.out.print(occupied?" - Occupied by ":" - Free");
-        if(crypto == null){
-            System.out.println("");
-        }else{
-            System.out.println( " - " + crypto.getNumber() );
-        }
-
-    }
 
 
 }
